@@ -1,0 +1,15 @@
+.building-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+    box-shadow: 0 1px 2px #ccc;
+}
+
+.item {
+    width: fit-content;
+    height: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
