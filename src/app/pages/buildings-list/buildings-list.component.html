@@ -1,4 +1,4 @@
-<h1>Buildings</h1>
+<p kendoTypography variant="h2" themeColor="light" textAlign="center">Buildings</p>
 
 <kendo-grid
     #grid
@@ -18,7 +18,7 @@
     [navigable]="true"
 >
     <ng-template kendoGridToolbarTemplate>
-    <button kendoGridAddCommand>Add new</button>
+    <button themeColor="dark" kendoGridAddCommand>Add new</button>
     <button
         kendoButton
         [disabled]="!editService.hasChanges()"
@@ -47,11 +47,11 @@
     editor="numeric"
     title="Floors"
     ></kendo-grid-column>
-    <kendo-grid-command-column title="command" [width]="220">
+    <kendo-grid-command-column title="Command" [width]="220">
     <ng-template kendoGridCellTemplate let-isNew="isNew">
         <button kendoGridRemoveCommand>Remove</button>
-        <button kendoGridSaveCommand>Add</button>
-        <button kendoGridCancelCommand>Cancel</button>
+        <button themeColor="success" kendoGridSaveCommand>Add</button>
+        <button themeColor="error" kendoGridCancelCommand>Cancel</button>
     </ng-template>
     </kendo-grid-command-column>
 </kendo-grid>

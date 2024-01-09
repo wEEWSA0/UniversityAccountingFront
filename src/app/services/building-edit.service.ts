@@ -97,7 +97,7 @@ export class BuildingEditService extends BehaviorSubject<Building[]> {
 
         console.log(this.deletedItems, this.updatedItems, this.createdItems);
         if (this.deletedItems.length) {
-            this.buildingService.delete(this.deletedItems).subscribe({
+            this.buildingService.delete(this.deletedItems.map(i => i.id)).subscribe({
                 next: data => {
                   console.log('next: ');
                   console.log(data);

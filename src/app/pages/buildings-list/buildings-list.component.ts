@@ -22,35 +22,7 @@ import { BuildingEditService } from '../../services/building-edit.service';
   templateUrl: './buildings-list.component.html',
   styleUrl: './buildings-list.component.css'
 })
-export class BuildingsListComponent implements OnInit {/*
-  buildings?: Building[];
-  currentBuilding: Building = {
-    name: '',
-    address: '',
-    id: BigInt(0),
-    floors: 0
-  };
-  currentIndex = -1;
-  name = '';
-
-  constructor(private buildingService: BuildingService) { }
-
-  ngOnInit(): void {
-    this.reciveBuildings();
-  }
-
-  reciveBuildings(): void {
-    this.buildingService.getAll()
-      .subscribe({
-        next: (data) => {
-          this.buildings = data;
-          console.log(data);
-        },
-        error: (e) => console.error(e)
-      });
-  }*/
-  //-------------------------------------
-
+export class BuildingsListComponent implements OnInit {
   private building: Building = {
     name: '',
     address: '',
@@ -153,41 +125,4 @@ export class BuildingsListComponent implements OnInit {/*
       floors: dataItem.floors,
     });
   }
-  
-  //-------------------------------------
-/*
-  refreshList(): void {
-    this.reciveBuildings();
-    this.currentBuilding = {
-      name: '',
-      address: '',
-      id: BigInt(0),
-      floors: 0
-    };
-    this.currentIndex = -1;
-  }
-
-  setActiveBuilding(building: Building, index: number): void {
-    this.currentBuilding = building;
-    this.currentIndex = index;
-  }
-
-  searchBuilding(): void {
-    this.currentBuilding = {
-      name: '',
-      address: '',
-      id: BigInt(0),
-      floors: 0
-    };
-    this.currentIndex = -1;
-
-    this.buildingService.findByTitle(this.name)
-      .subscribe({
-        next: (data) => {
-          this.buildings = data;
-          console.log(data);
-        },
-        error: (e) => console.error(e)
-      });
-  }*/
 }

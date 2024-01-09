@@ -96,7 +96,7 @@ export class RoomEditService extends BehaviorSubject<Room[]> {
 
         console.log(this.deletedItems, this.updatedItems, this.createdItems);
         if (this.deletedItems.length) {
-            this.roomService.delete(this.deletedItems).subscribe({
+            this.roomService.delete(this.deletedItems.map(i => i.id)).subscribe({
                 next: data => {
                   console.log('next: ');
                   console.log(data);

@@ -4,6 +4,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 import { Building } from '../models/Building';
 
 const baseUrl = 'http://localhost:5001/Building';
+const buildingsLimit = 1000;
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class BuildingService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Building[]> {
-    return this.http.get<Building[]>(`${baseUrl}/get-all-with-limit/${20}`);
+    return this.http.get<Building[]>(`${baseUrl}/get-all-with-limit/${buildingsLimit}`);
   }
 
   get(id: bigint): Observable<Building> {
@@ -25,11 +26,11 @@ export class BuildingService {
     return this.http.post(`${baseUrl}/add-new-range`, data).pipe(catchError(this.handleError));
   }
 
-  update(data: any): Observable<any> {
+  update(data: Building[]): Observable<any> {
     return this.http.post(`${baseUrl}/update-range`, data).pipe(catchError(this.handleError));
   }
 
-  delete(data: any): Observable<any> {
+  delete(data: bigint[]): Observable<any> {
     return this.http.post(`${baseUrl}/remove-range`, data).pipe(catchError(this.handleError));
   }
 
